@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="{% url 'addpatient' %}" style="width: fit-content;margin-top: 10vh;padding: 6vh 6vh;" class="container bg-info">
+    {% csrf_token %}
+    <h1 class="text-center">Add Patient Here</h1>
+    <br>
+    <input type="text" placeholder="name" name="name" id="" class="form-control text-center" required>
+    <br>
+    <input type="text" placeholder="age"  name="age" id="" class="form-control text-center" required>
+    <br>
+    <input type="text" placeholder="dependents"  name="dependents" id="" class="form-control text-center" required>
+    <br>
+    <input type="text" placeholder="address"  name="address" id="" class="form-control text-center" required>
+    <br>
+    <input type="text" placeholder="Health issues"  name="healthIssues" id="" class="form-control text-center" required>
+    <br>
+    <div class="container" style="width: fit-content;">
+        <input type="submit" value="add" class="btn btn-light">
+    </div>
+
+   
+    
+</form>
+{% endblock %}

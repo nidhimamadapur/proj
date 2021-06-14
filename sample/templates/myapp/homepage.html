@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <a href="{% url 'addpatientpage' %}" style="position: fixed;bottom: 2vh;right: 2vw;" class="btn btn-success">Add Patient</a>
+
+    <div class="container">
+        <h3 class="text-center">Patients</h3>
+        <table class="table table-striped">
+            <tr class="bg-info text-light">
+                <th>name</th>
+                <th>age</th>
+                <th>Dependents</th>
+                <th>address</th>
+                <th>Health issues</th>
+            </tr>
+            {% for patient in patients %}
+            <tr>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.dependents}}</td>
+                <td>{{patient.address}}</td>
+                <td>{{patient.healthIssues}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="container">
+        <h3 class="text-center">PayCheck</h3>
+        <table class="table table-striped">
+            <tr class="bg-info text-light">
+                <th>Dependents</th>
+                <th>Premium Amount</th>
+            </tr>
+            {% for key,value in dependents%}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+             
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+
+{% endblock %}
